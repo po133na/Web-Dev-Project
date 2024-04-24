@@ -1,1 +1,17 @@
-<p>sneakers-list works!</p>
+<div class="container">
+    <h2 class="title">Sneakers List</h2>
+    <div *ngFor="let sneakers of sneakersCategory" class="product-container">
+        <img src="{{sneakers.image_url}}" alt="product image">
+        <h3 class="product-title">
+            <a [title]="sneakers.name + ' details'" [routerLink]="['/sneakers', sneakers.id]">
+                {{sneakers.name}}
+            </a>
+        </h3>
+        <p *ngIf="sneakers.price" class="price">
+            Price: {{sneakers.price}} ₸
+        </p>
+        <button type="button" class="delete-btn" (click)="deleteSneakers(sneakers.id)">Delete</button>
+       <!--<button type="button" class="share-btn" (click)="share(product.link)">Share by Telegram</button>
+       -->
+    </div>
+</div> 

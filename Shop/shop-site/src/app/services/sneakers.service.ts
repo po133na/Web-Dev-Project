@@ -2,14 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Sneakers } from '../models/sneakers';
-import { Category } from '../models/categories';
-
-
 
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class SneakersService {
   baseUrl = 'http://127.0.0.1:8000';
   sneakersId: number | undefined
   constructor(private http: HttpClient) { }

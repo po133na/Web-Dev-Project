@@ -6,7 +6,7 @@ import { CategoryComponent } from './category/category.component';
 import { HomeComponent } from './home/home.component';
 import { SneakersDetailsComponent } from './sneakers-details/sneakers-details.component';
 import { SneakersListComponent } from './sneakers-list/sneakers-list.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
+
 
 const routes: Routes = [
     {
@@ -25,11 +25,11 @@ const routes: Routes = [
         component: SneakersDetailsComponent
     },
     {
-        path: 'categories',
+        path: 'categories/',
         component: CategoryComponent
     },
     {
-        path: 'categories/<int:id>/sneakers',
+        path: 'categories/<int:id>/sneakers/',
         component: SneakersListComponent
     },
     {

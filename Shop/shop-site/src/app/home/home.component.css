@@ -1,4 +1,13 @@
-
-*{
+.wrapper {
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     background-image: url("../../assets/arp.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 20px;
 }
