@@ -10,23 +10,38 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 
 const routes: Routes = [
     {
-        path: 'sneakers',
+        path: 'sneakers/',
         component: SneakersListComponent
     },
     {
-        path: '',
+        path: '', redirectTo: '/home', pathMatch: 'full'
+    },
+    {
+        path: 'home',
         component: HomeComponent
     },
     {
-        path: 'sneakers/:id',
+        path: 'sneakers/<int:id>/',
         component: SneakersDetailsComponent
     },
     {
         path: 'categories',
         component: CategoryComponent
     },
+    {
+        path: 'categories/<int:id>/sneakers',
+        component: SneakersListComponent
+    },
+    {
+        path: 'add', component: AddProductComponent
+    }
 ];
 
+@NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+  })
+
 export class AppRoutingModule{
-    
+
 }
