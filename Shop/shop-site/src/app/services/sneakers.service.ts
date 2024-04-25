@@ -1,42 +1,63 @@
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { Sneakers } from '../models/sneakers';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class SneakersService {
-  baseUrl = 'http://127.0.0.1:8000';
-  sneakersId: number | undefined
-  constructor(private http: HttpClient) { }
+  private BASE_URL = 'http://localhost:8000/api/';
 
-  getSneakers(): Observable<Sneakers[]>{
-    return this.http.get<Sneakers[]>(`${this.baseUrl}/api/sneakers/`);
-  }
+  constructor(private http: HttpClient) {}
 
-  createSneakers(sneakersId: Number, sneakersName: String, sneakersDesc: String, sneakersPrice: Number, sneakersImage_url: string, sneakersIs_active: boolean, sneakersCategory: number){
-    return this.http.post<Sneakers>(`${this.baseUrl}/api/sneakers`,
-    {
-      id: sneakersId,
-      name: sneakersName,
-      description: sneakersDesc,
-      price: sneakersPrice,
-      image_url: sneakersImage_url,
-      is_active: sneakersIs_active,
-      category: sneakersCategory
+  getProducts(params?: any): Observable<Sneakers> {
+    let queryParams = new HttpParams();
+    if (params) {
+      Object.keys(params).forEach(key => {
+        queryParams = queryParams.append(key, params[key]);
+      });
     }
-    );
+    return this.http.get<Sneakers>(`${this.BASE_URL}product/`, { params: queryParams })
+      .pipe(catchError(this.handleError));
   }
 
-  getSneakersId(sneakersId: number){
-    this.sneakersId = sneakersId;
+  // Handle errors
+  handleError(error: HttpErrorResponse): Observable<never> {
+    let errorMessage = 'Unknown error!';
+    if (error.error instanceof ErrorEvent) {
+      errorMessage = `Client-side Error: ${error.error.message}`;
+    } else {
+      errorMessage = `Server-side Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    console.error('Error occurred:', errorMessage);
+    return throwError(() => new Error(errorMessage));
   }
 
-  deleteSneakers(sneakersId: number): Observable<any>{
-    return this.http.delete(
-      `${this.baseUrl}/api/sneakers/${sneakersId}/`
-    )
-  }
 
+getProductById(id: number): Observable<Sneakers> {
+  return this.http.get<Sneakers>(`${this.BASE_URL}product/${id}`)
+    .pipe(catchError(this.handleError));
+}
+  
+postProduct(sneakers: Sneakers): Observable<Sneakers> {
+  return this.http.post<Sneakers>(`${this.BASE_URL}product-post/`, sneakers, )
+  .pipe(catchError(this.handleError));
+  
+}
+
+deleteProduct(id: number): Observable<any> {
+  return this.http.delete<Sneakers>(`${this.BASE_URL}product/${id}`).pipe(catchError(this.handleError));
+}
+
+updateProduct(id: number, sneakers: Sneakers): Observable<Sneakers> {
+  return this.http.put<Sneakers>(`${this.BASE_URL}product/${id}`, JSON.stringify(sneakers), {
+    headers: { 'Content-Type': 'application/json' }
+  }).pipe(catchError(this.handleError));
+}
+
+
+ 
 }
