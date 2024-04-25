@@ -1,1 +1,27 @@
-<p>cart works!</p>
+<div class="cart-container">
+    <h2>Your Cart</h2>
+    
+    <div *ngIf="cart.items.length === 0; else cartItems">
+      <p>Your cart is empty.</p>
+    </div>
+    
+    <ng-template #cartItems>
+      <div *ngFor="let item of cart.items" class="cart-item">
+        <img [src]="getProductImage(item.product)" alt="Product Image">
+        <div class="item-details">
+          <h3>{{ getProductTitle(item.product) }}</h3>
+          <p>Quantity: {{ item.quantity }}</p>
+          <p>Price: {{ getProductPrice(item.product) }}</p>
+          <!-- You can add more details here if needed -->
+        </div>
+      </div>
+    </ng-template>
+    
+    <div class="cart-summary" *ngIf="cart.items.length > 0">
+      <h3>Cart Summary</h3>
+      <p>Total Items: {{ getTotalItems() }}</p>
+      <p>Total Price: {{ getTotalPrice()}}</p>
+      <!-- You can add more summary details here if needed -->
+    </div>
+  </div>
+  

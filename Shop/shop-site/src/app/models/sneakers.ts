@@ -11,12 +11,12 @@ export interface Sneakers {
 export const sneakers = [
     {
       id: 1,
-      name: 'Apple iPhone 15 Pro',
+      name: 'Dior Air Jordans',
       description: 
-      'A phone that girls need to take the best photos ever',
-      price: 568990,
-      image_url: 'https://resources.cdn-kaspi.kz/img/m/p/hae/h00/83559620739102.jpg?format=preview-large',
+      'The best Designer sneakers in the world.',
+      price: 300000,
+      image_url: 'https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2020%2F01%2Fdior-air-jordan-1-low-high-first-look-1.jpg?w=960&cbr=1&q=90&fit=max',
       is_active: true,
-      category: 2
+      category: 3
     }
 ];

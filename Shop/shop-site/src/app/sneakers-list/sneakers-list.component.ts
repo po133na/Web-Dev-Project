@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Sneakers, sneakers } from '../models/sneakers';
 import { ActivatedRoute } from '@angular/router';
-import { SneakersService } from '../services/sneakers.service';
 
 @Component({
   selector: 'app-sneakers-list',
   templateUrl: './sneakers-list.component.html',
-  styleUrl: './sneakers-list.component.css'
+  styleUrls: ['./sneakers-list.component.css']
 })
 export class SneakersListComponent implements OnInit {
   sneakers = [...sneakers];
@@ -22,9 +22,7 @@ export class SneakersListComponent implements OnInit {
   }
 
 
-    deleteSneakers(sneakersId: number){
-      this.sneakersCategory = this.sneakersCategory?.filter(s => s.id !== sneakersId);
-    }
-
-
+  deleteSneakers(sneakersId: number) {
+    this.sneakersCategory = this.sneakersCategory?.filter(s => s.id !== sneakersId);
+  }
 }
