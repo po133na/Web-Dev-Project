@@ -20,7 +20,7 @@ export class SneakersService {
         queryParams = queryParams.append(key, params[key]);
       });
     }
-    return this.http.get<Sneakers>(`${this.BASE_URL}product/`, { params: queryParams })
+    return this.http.get<Sneakers>(`${this.BASE_URL}sneakers/`, { params: queryParams })
       .pipe(catchError(this.handleError));
   }
 
@@ -38,22 +38,22 @@ export class SneakersService {
 
 
 getProductById(id: number): Observable<Sneakers> {
-  return this.http.get<Sneakers>(`${this.BASE_URL}product/${id}`)
+  return this.http.get<Sneakers>(`${this.BASE_URL}sneakers/${id}`)
     .pipe(catchError(this.handleError));
 }
-  
+  //check sneakers post in case of changing to products
 postProduct(sneakers: Sneakers): Observable<Sneakers> {
-  return this.http.post<Sneakers>(`${this.BASE_URL}product-post/`, sneakers, )
+  return this.http.post<Sneakers>(`${this.BASE_URL}sneakers-post/`, sneakers, )
   .pipe(catchError(this.handleError));
   
 }
 
 deleteProduct(id: number): Observable<any> {
-  return this.http.delete<Sneakers>(`${this.BASE_URL}product/${id}`).pipe(catchError(this.handleError));
+  return this.http.delete<Sneakers>(`${this.BASE_URL}sneakers/${id}`).pipe(catchError(this.handleError));
 }
 
 updateProduct(id: number, sneakers: Sneakers): Observable<Sneakers> {
-  return this.http.put<Sneakers>(`${this.BASE_URL}product/${id}`, JSON.stringify(sneakers), {
+  return this.http.put<Sneakers>(`${this.BASE_URL}sneakers/${id}`, JSON.stringify(sneakers), {
     headers: { 'Content-Type': 'application/json' }
   }).pipe(catchError(this.handleError));
 }
