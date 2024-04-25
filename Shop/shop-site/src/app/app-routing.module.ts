@@ -21,7 +21,7 @@ const routes: Routes = [
         component: HomeComponent
     },
     {
-        path: 'sneakers/<int:id>/',
+        path: 'sneakers/:sneakersId',
         component: SneakersDetailsComponent
     },
     {
@@ -29,14 +29,14 @@ const routes: Routes = [
         component: CategoryComponent
     },
     {
-        path: 'categories/<int:id>/sneakers',
+        path: 'categories/:id',
         component: SneakersListComponent
     },
     {
         path: 'add', component: AddProductComponent
     },
     {
-        path: 'categories/:id',
+        path: 'categories/:categoryId',
         component: SneakersListComponent
     }
 ];

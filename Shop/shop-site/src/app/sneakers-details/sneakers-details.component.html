@@ -1,1 +1,14 @@
-<p>sneakers-details works!</p>
+<div class="content">
+    <h2>Product Details</h2>
+
+    <div class="main">
+        <div class="product-details" *ngIf="sneakers">
+            <div class="characteristics">
+                <h3>{{sneakers.name}}</h3>
+                <h4>Price: {{sneakers.price}} ₸</h4>
+                <p>Description: {{sneakers.description}}</p>
+            </div>
+            <img src="{{sneakers.image_url}}" alt="product photo">
+        </div>
+    </div>
+</div>
