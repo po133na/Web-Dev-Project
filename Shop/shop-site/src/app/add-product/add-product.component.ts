@@ -22,8 +22,7 @@ export class AddProductComponent implements OnInit {
       description: new FormControl('', [Validators.required]),
       price: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+(\.[0-9]{1,2})?$')]),
       image: new FormControl('', [Validators.required]),
-      category_id: new FormControl('', [Validators.required]),
-      rating: new FormControl('', [Validators.required]),
+      category_id: new FormControl('', [Validators.required])
     });
   }
 

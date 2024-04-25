@@ -10,35 +10,21 @@ import { SneakersListComponent } from './sneakers-list/sneakers-list.component';
 
 const routes: Routes = [
     {
-        path: 'sneakers/',
-        component: SneakersListComponent
-    },
+        path: 'sneakers/', component: SneakersListComponent},
     {
-        path: '', redirectTo: 'home', pathMatch: 'full'
-    },
+        path: '', redirectTo: 'home', pathMatch: 'full'},
     {
-        path: 'home',
-        component: HomeComponent
-    },
+        path: 'home', component: HomeComponent},
     {
-        path: 'sneakers/:sneakersId',
-        component: SneakersDetailsComponent
-    },
+        path: 'sneakers/:id', component: SneakersDetailsComponent},
     {
-        path: 'categories',
-        component: CategoryComponent
-    },
+        path: 'categories', component: CategoryComponent},
     {
-        path: 'categories/:id',
-        component: SneakersListComponent
-    },
+        path: 'categories/:id', component: SneakersListComponent},
     {
-        path: 'add', component: AddProductComponent
-    },
+        path: 'add', component: AddProductComponent},
     {
-        path: 'categories/:categoryId',
-        component: SneakersListComponent
-    }
+        path: 'categories/categoryId', component: SneakersListComponent}
 ];
 
 @NgModule({

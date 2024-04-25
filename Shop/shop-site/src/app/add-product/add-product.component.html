@@ -1,4 +1,4 @@
-<form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="form-wrapper">
+<form [formGroup]="sneakersForm" (ngSubmit)="onSubmit()" class="form-wrapper">
     <div class="form-group">
       <label for="name" class="label">Name:</label>
       <input id="name" type="text" formControlName="name" class="input-field" />
@@ -28,16 +28,7 @@
         class="input-field"
       />
     </div>
-    <div class="form-group">
-      <label for="rating" class="label">Rating:</label>
-      <input
-        id="rating"
-        type="text"
-        formControlName="rating"
-        class="input-field"
-      />
-    </div>
-    <button class="submit-button" type="submit" [disabled]="!productForm.valid">
+    <button class="submit-button" type="submit" [disabled]="!sneakersForm.valid">
       Add Product
     </button>
   </form>
