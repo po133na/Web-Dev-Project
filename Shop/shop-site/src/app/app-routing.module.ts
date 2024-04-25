@@ -14,7 +14,7 @@ const routes: Routes = [
         component: SneakersListComponent
     },
     {
-        path: '', redirectTo: '/home', pathMatch: 'full'
+        path: '', redirectTo: 'home', pathMatch: 'full'
     },
     {
         path: 'home',
@@ -25,15 +25,19 @@ const routes: Routes = [
         component: SneakersDetailsComponent
     },
     {
-        path: 'categories/',
+        path: 'categories',
         component: CategoryComponent
     },
     {
-        path: 'categories/<int:id>/sneakers/',
+        path: 'categories/<int:id>/sneakers',
         component: SneakersListComponent
     },
     {
         path: 'add', component: AddProductComponent
+    },
+    {
+        path: 'categories/:id',
+        component: SneakersListComponent
     }
 ];
 
