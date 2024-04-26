@@ -49,7 +49,7 @@ export class UpdateProductComponent implements OnInit {
       error => console.error('Error fetching product:', error)
     );
   }
-//updatedProduct can be sneakers
+//updatedProduct can be updatedSneakers
   updateProduct(): void {
     if (this.sneakers && this.sneakersForm.valid) { 
       this.sneakersService.updateProduct(this.sneakers.id, this.sneakersForm.value).subscribe({

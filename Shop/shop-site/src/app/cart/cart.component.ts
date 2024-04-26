@@ -13,7 +13,7 @@ export class CartComponent implements OnInit {
       { id: 2, product: 2, quantity: 1 },
       // Add more items if needed
     ],
-    enrichedItems: [] // You can initialize this if needed
+    enrichedItems: [] // initialize this if needed
   };
 
   constructor() { }
@@ -24,16 +24,14 @@ export class CartComponent implements OnInit {
 
   getProductImage(productId: number): string {
     // Implement logic to get product image URL based on productId
-    return 'path/to/product/image.jpg';
+    return '{image_url}';
   }
 
   getProductTitle(productId: number): string {
-    // Implement logic to get product title based on productId
     return 'Product Title';
   }
 
   getProductPrice(productId: number): number {
-    // Implement logic to get product price based on productId
     return 50; // Example price
   }
 

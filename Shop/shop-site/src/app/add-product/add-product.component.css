@@ -5,6 +5,8 @@
     padding: 20px;
     background-color: #f8f9fa;
     border-radius: 8px;
+    background-image: url("/../assets/arp.jpeg");
+    min-height: 50vh;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   

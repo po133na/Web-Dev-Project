@@ -24,7 +24,7 @@
   }
   
   .product-container img {
-    width: 130px;
+    width: 200px;
     height: 200px;
     border-radius: 5px;
     margin-bottom: 5px;
@@ -41,7 +41,7 @@
   }
   
   .share-btn {
-    background-color: pink;
+    background-color: rgb(206, 206, 206);
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -69,7 +69,7 @@
   }
   
   .delete-btn{
-    background-color: pink;
+    background-color: rgb(193, 193, 193);
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -79,7 +79,7 @@
   }
 
   .delete-btn:hover {
-    background-color: #ff7ab2;
+    background-color: #888888;
   }
 
   .product-container .product-title {

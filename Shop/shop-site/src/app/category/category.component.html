@@ -5,7 +5,7 @@
 <!--Changed categories to sneakers in router link-->
     <div class="list">
         <ul *ngFor="let category of categories">
-            <li><a [title]="category.name + ' details'" [routerLink]="['/sneakers', category.id]">
+            <li><a [title]="category.name + ' details'" [routerLink]="['/categories', category.id]">
                 {{category.name}}
             </a></li>
         </ul>
